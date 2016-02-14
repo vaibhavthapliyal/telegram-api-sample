@@ -36,9 +36,12 @@ public class TestTelegramAPI {
 			}
 		});
 		
+		
         TLConfig config = api.doRpcCallNonAuth(new TLRequestHelpGetConfig());
         apistate.updateSettings(config);
         TLSentCode sentCode;
+        
+        
         sentCode = api.doRpcCallNonAuth(new TLRequestAuthSendCode("+919818760941", 5, 34086, "5308ea5996c2cec5948b3c4b45382380", "en"));
         boolean registered = sentCode.getPhoneRegistered();
 		
